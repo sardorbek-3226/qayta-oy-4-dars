@@ -36,7 +36,8 @@ const Home = ({ books, deleteBook }) => {
               <h3 className='text-2xl font-semibold pt-2'>{book.author}</h3>
               <h5 className='text-xl font-medium pt-2 pb-2'>{book.genre}</h5>
 
-              <div className='flex items-center container justify-between flex-col-2'>
+              <div className='flex items-center container justify-between flex-col space-y-3'>
+                <div className='flex items-center gap-10'>
                 <div className='ml-3'>
                   <h2 className="line-through text-red-500 text-xl pr-10 mb-1">${book.price}</h2>
                   <h1 className="text-white/80 font-bold text-2xl pl-5 mb-1">${book.discountPrice}</h1>
@@ -47,8 +48,9 @@ const Home = ({ books, deleteBook }) => {
                   <h1 className='text-xl select-none'>{count}</h1>
                   <button className='btn btn-primary btn-sm' onClick={() => handleAdd(book.id)}>&#43;</button>
                 </div>
+                </div>
 
-                <div className='grid grid-cols space-y-2'>
+                <div className='grid grid-cols-2 gap-4 '>
                   {count > 0 && (
                     <button className='btn btn-primary btn-sm mb-2' onClick={handleClick}>Buy</button>
                   )}
