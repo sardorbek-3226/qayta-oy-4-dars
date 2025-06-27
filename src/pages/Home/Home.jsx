@@ -51,10 +51,10 @@ const Home = ({ books, deleteBook }) => {
                 </div>
 
                 <div className='grid grid-cols-2 gap-4 '>
+                  <button className="btn btn-outline btn-sm btn-primary px-8" onClick={() => deleteBook(book.id)}>Delete</button>
                   {count > 0 && (
                     <button className='btn btn-primary btn-sm mb-2' onClick={handleClick}>Buy</button>
                   )}
-                  <button className="btn btn-outline btn-sm btn-primary px-8" onClick={() => deleteBook(book.id)}>Delete</button>
                 </div>
               </div>
             </div>
