@@ -4,12 +4,15 @@ import Navbar from './component/Navbar/Navbar';
 import Footer from './component/Footer/Footer';
 import Home from './pages/Home/Home';
 import About from './pages/About/About';
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import { toast } from 'react-toastify';
 
 const App = () => {
-  const [books] = useState(
+  const [books, setBooks] = useState(
     [
       {
-        "id": 1,
+        id: 1,
         "title": "To Kill a Mockingbird",
         "author": "Harper Lee",
         "genre": "Historical Fiction",
@@ -18,7 +21,7 @@ const App = () => {
         "discountPrice": 14.99
       },
       {
-        "id": 2,
+        id: 2,
         "title": "Pride and Prejudice",
         "author": "Jane Austen",
         "genre": "Romance",
@@ -262,15 +265,31 @@ const App = () => {
       }
     ]
   );
-
+  const deleteBook = (id) => {
+    const deleteBooks = books.filter((book) => book.id !== id);
+    setBooks(deleteBooks);
+    toast.dark('Kitob o‘chirildi');
+  };
+  
+  if (books.length === 0) {
+    return (
+      <div>
+        <h1 className='text-4xl text-red-500 text-center flex items-center justify-center mt-[23%]'>Hozircha kitoblar yo‘q  <span className='pl-8 text-4xl pr-2'>:</span> (</h1>
+      </div>
+    );
+  }
+  
   return (
-    <>
+    <>  
       <Navbar />
       <Routes>
-        <Route path="/" element={<Home books={books} />} />
+        <Route path="/" element={<Home books={books} deleteBook={deleteBook}/>} />
         <Route path="/about" element={<About />} />
       </Routes>
       <Footer />
+      <ToastContainer position="top-center" autoClose={3000} 
+        
+       />  
     </>
   );
 };
