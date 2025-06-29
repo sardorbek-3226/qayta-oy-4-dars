@@ -40,7 +40,7 @@ const Home = ({ books, deleteBook }) => {
         return (
           <li key={book.id} className='hover:scale-105 transition-all ease-linear duration-150 gap-5'>
             <div data-tip={book.title} className='lg:tooltip max-w-[450px] shadow-2xl shadow-white/5 rounded-xl text-center '>
-              <div className='w-[350px] h-[350px] mx-auto p-3 rounded-xl overflow-hidden shadow-lg relative'>
+              <div className='max-w-[350px] mx-auto p-3 rounded-xl overflow-hidden shadow-lg relative'>
                 <img
                   
                   className=' w-[300px] h-[300px] object-cover opacity-50 transition-all hover:scale-120 duration-500 ease-in-out hover:rotate-[5deg] hover:opacity-100'
