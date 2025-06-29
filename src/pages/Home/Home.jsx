@@ -40,10 +40,10 @@ const Home = ({ books, deleteBook }) => {
         return (
           <li key={book.id} className='hover:scale-105 transition-all ease-linear duration-150 gap-5'>
             <div className=' max-w-[450px] shadow-2xl shadow-white/5 rounded-xl text-center '>
-              <div className='w-[350px] h-[350px] mx-auto p-3 rounded-xl overflow-hidden shadow-lg relative'>
+              <div className='aspect-square w-full relative'>
                 <img
                   
-                  className='w-full h-full object-cover opacity-50 transition-all  duration-500 ease-in-out hover:rotate-[5deg] hover:opacity-100'
+                  className='w-full h-full object-cover opacity-50 transition-all duration-500 ease-in-out hover:rotate-[5deg] hover:opacity-100'
                   src={book.image}
                   alt={book.title}
                 />
