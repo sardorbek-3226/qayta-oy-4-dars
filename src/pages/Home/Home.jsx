@@ -43,7 +43,7 @@ const Home = ({ books, deleteBook }) => {
               <div className='w-[350px] h-[350px] mx-auto p-3 rounded-xl overflow-hidden shadow-lg relative'>
                 <img
                   
-                  className=' w-full h-full object-cover opacity-50 transition-all hover:scale-120 duration-500 ease-in-out hover:rotate-[5deg] w-[150px] hover:opacity-100'
+                  className='  object-cover opacity-50 transition-all hover:scale-120 duration-500 ease-in-out hover:rotate-[5deg] w-[150px] hover:opacity-100'
                   src={book.image}
                   alt={book.title}
                 />
