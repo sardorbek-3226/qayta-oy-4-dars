@@ -265,6 +265,8 @@ const App = () => {
       }
     ]
   );
+
+
   const deleteBook = (id) => {
     const deleteBooks = books.filter((book) => book.id !== id);
     setBooks(deleteBooks);
